@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #00e0ff;
+    --secondary-color: #00a4ff;
+    --dark-bg: #0d1a26;
+    --text-color: #f0f8ff;
+    --form-bg: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.data-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-movement 60s linear infinite;
+    z-index: 0;
+}
+
+@keyframes grid-movement {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    background: var(--form-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.02);
+}
+
+.logo-box {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 20px var(--primary-color);
+    animation: pulse 2s infinite;
+}
+
+.logo-box i {
+    font-size: 2.5rem;
+    color: var(--dark-bg);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px var(--primary-color); }
+    50% { box-shadow: 0 0 25px var(--primary-color); }
+    100% { box-shadow: 0 0 10px var(--primary-color); }
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+}
+
+h3 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    background: var(--form-bg);
+    border-radius: 10px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.input-group:focus-within {
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.input-group i {
+    color: var(--primary-color);
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.input-group input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: var(--dark-bg);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 164, 255, 0.3);
+}
+
+.link-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.9rem;
+    gap: 10px;
+}
+
+.link-container a {
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.link-container a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* ... (El código CSS anterior se mantiene igual) ... */
+
+/* Estilos para el nuevo botón de huella digital */
+.fingerprint-button {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.fingerprint-button:hover {
+    background-color: rgba(0, 224, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 224, 255, 0.3);
+}
+
+.fingerprint-button i {
+    margin-right: 10px;
+}
+
+.separator {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    top: 50%;
+}
+
+.separator::before { left: 0; }
+.separator::after { right: 0; }
+
+/* ... (El resto del código CSS anterior se mantiene) ... */
